@@ -121,7 +121,7 @@ def analyse_file_singular(filename,runtype, refresh, print_time, lfc_counters, d
         freq_current = pd_data_arr.EVIB2.iloc[index]
         vel_frag_1 = np.array([pd_data_arr.PCX1.iloc[index],pd_data_arr.PCY1.iloc[index],pd_data_arr.PCZ1.iloc[index]]) / (mass_frag_1 * u)
         vel_frag_2 = np.array([pd_data_arr.PCX2.iloc[index],pd_data_arr.PCY2.iloc[index],pd_data_arr.PCZ2.iloc[index]]) / (mass_frag_2 * u)
-        rel_vel = vel_frag_1 - vel_frag_2
+        rel_vel = vel_frag_2 - vel_frag_1
         vel_mag = np.sqrt(np.dot(rel_vel, rel_vel))
         cos_theta = rel_vel[2] / vel_mag
         for i in range (0,len(hcl_erot_arr)): #column 0 = rotational energy state
